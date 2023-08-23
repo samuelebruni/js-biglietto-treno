@@ -36,15 +36,25 @@ console.log(priceTicket, "euro");
 let salePrice;
 
 if (userAge < 18){
-    salePrice = (priceTicket / 100) * 20; 
-}
 
-else if (userAge > 65 ){
+    salePrice = (priceTicket / 100) * 20;
+
+} else if (userAge > 65 ){
+
     salePrice = (priceTicket / 100) * 40;
+    //sconto per over 65
+
+} else {
+
+    salePrice = 0
+    console.log("Non hai diritto ad alcuno sconto");
+    //nessuna scontistica
+
 }
 
-else (userAge > 18, userAge < 65) {
-    "Niente sconto amico mio"
-}
+let finalPrice = Math.round (priceTicket - salePrice);
 
-console.log(salePrice);
+console.log("prezzo finale con applicazione eventuale di sconto", finalPrice, "euro");
+
+
+document.getElementById("myticket").innerHTML = "Il tuo biglietto costerà" + " " + finalPrice + "€";
