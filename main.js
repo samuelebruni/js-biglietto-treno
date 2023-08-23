@@ -6,3 +6,45 @@ va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va stampato in forma umana (ovvero con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca nella documentazione di JS.
 */
+
+/* STRUMENTI
+
+- prompt
+- const / let
+- consolelog
+- condizioni
+- 
+
+*/
+
+//Chiedere l'eta e quanti km deve effettuare il passeggero
+
+const userKm = Number (prompt ("Quanti KM devi percorrere?"));
+const userAge = Number (prompt ("Quanti anni hai?"));
+
+console.log("KM", userKm,"Età",  userAge);
+
+//Calcolare il prezzo totale del viaggio
+
+let priceForKm= 0.21;
+const priceTicket = priceForKm * userKm;
+
+console.log(priceTicket, "euro");
+
+//Applicare sconto per i minorenni del 20%
+
+let salePrice;
+
+if (userAge < 18){
+    salePrice = (priceTicket / 100) * 20; 
+}
+
+else if (userAge > 65 ){
+    salePrice = (priceTicket / 100) * 40;
+}
+
+else (userAge > 18, userAge < 65) {
+    "Niente sconto amico mio"
+}
+
+console.log(salePrice);
