@@ -52,7 +52,8 @@ if (userAge < 18){
 
 }
 
-let finalPrice = Math.round (priceTicket - salePrice);
+let finalPrice = priceTicket - salePrice;
+finalPrice = finalPrice.toFixed(2);
 
 console.log("prezzo finale con applicazione eventuale di sconto", finalPrice, "euro");
 
